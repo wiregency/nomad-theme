@@ -3,7 +3,7 @@
 Responsive and modern theme for Azuriom built with Bootstrap.
 Made by <a href="https://github.com/pkhemae" target="_blank">Khémara Parc</a> and <a href="https://github.com/Akira13345" target="_blank">Akira13345</a>.
 
-###  Download on the <a href="#">Azuriom Marketplace</a>
+###  Download on the <a href="https://market.azuriom.com/resources/162">Azuriom Marketplace</a>
 
 <img src="https://cdn.discordapp.com/attachments/744165378057568318/1341821897159217152/image.png?ex=67b76486&is=67b61306&hm=9d359152077ee879f69fe792f57a7c0b5da52ef4de3e6af1009b010ff4004d34&" width="1000">
 <img src="https://cdn.discordapp.com/attachments/744165378057568318/1341822465747325000/image.png?ex=67b7650d&is=67b6138d&hm=651b5db7a6705112d7aa9d480dace9f58b99a24cfe294ee7f57ea57077aabb30&" width="1000">
