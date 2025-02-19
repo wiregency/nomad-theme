@@ -1,0 +1,37 @@
+{
+    "color": "#ffc107",
+    "footer_description": "Rejoignez notre communaut\u00e9 Minecraft et plongez dans une aventure exceptionnelle aux c\u00f4t\u00e9s de joueurs passionn\u00e9s. Construisez, explorez et relevez des d\u00e9fis \u00e9piques dans un univers sans limite.",
+    "footer_links": [
+        {
+            "name": "Vote",
+            "value": "https://azuriom.com"
+        },
+        {
+            "name": "Boutique",
+            "value": "https://azuriom.com"
+        }
+    ],
+    "legal_links": [
+        {
+            "name": "CGU",
+            "value": "https://azuriom.com"
+        },
+        {
+            "name": "CGV",
+            "value": "https://azuriom.com"
+        }
+    ],
+    "unique_players": "150",
+    "record_players": "276",
+    "cta_title": "Pr\u00eat \u00e0 commencer l'aventure ?",
+    "cta_description": "Rejoignez des milliers de joueurs et cr\u00e9ez votre propre histoire dans notre univers Minecraft unique.",
+    "about_image": null,
+    "about_title": "Nomad c'est quoi ?",
+    "about_description": "<p>Nomad est un serveur Minecraft unique qui repousse les fronti\u00e8res du jeu vanilla avec une approche innovante du gameplay. Notre communaut\u00e9 est au c\u0153ur de notre projet, o\u00f9 chaque joueur peut contribuer activement au d\u00e9veloppement et \u00e0 l'\u00e9volution de l'exp\u00e9rience de jeu.</p>",
+    "stats_icon_1": "bi bi-people-fill",
+    "stats_icon_2": "bi bi-person-fill",
+    "stats_icon_3": "bi bi-trophy-fill",
+    "unique_players_label": "Joueurs uniques",
+    "record_players_label": "Record de joueurs",
+    "online_players_label": "Joueurs en ligne"
+}
