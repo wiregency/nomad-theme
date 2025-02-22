@@ -48,6 +48,12 @@
                     <div class="d-none" data-vote-step="3">
                         <p id="vote-result"></p>
                     </div>
+
+                    <div class="d-none" data-vote-step="server">
+                        <p>{{ trans('vote::messages.server') }}</p>
+                        <div id="server-select" class="d-flex justify-content-center gap-3 flex-wrap"></div>
+                    </div>
+
                     <div id="status-message" class="mt-3"></div>
                 </div>
             </div>
