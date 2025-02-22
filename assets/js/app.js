@@ -7,41 +7,34 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    const clipboard = new ClipboardJS('#server-ip');
+    const serverIpButtons = document.querySelectorAll('.server-ip');
     let isAnimating = false;
     
-    clipboard.on('success', (e) => {
-        if (isAnimating) return;
-        
-        const button = e.trigger;
-        const originalText = button.textContent;
-        const copyMessage = button.getAttribute('data-copy-message');
-        isAnimating = true;
-        
-        button.textContent = copyMessage;
-        button.style.pointerEvents = 'none';
-        
-        setTimeout(() => {
-            button.textContent = originalText;
-            button.style.pointerEvents = 'auto';
-            isAnimating = false;
-        }, 2000);
-        
-        e.clearSelection();
-    });
-
-    clipboard.on('error', () => {
-        if (isAnimating) return;
-        
-        const button = document.querySelector('#server-ip');
-        isAnimating = true;
-        button.textContent = 'Erreur de copie';
-        button.style.pointerEvents = 'none';
-        
-        setTimeout(() => {
-            button.textContent = 'play.hyping.fr';
-            button.style.pointerEvents = 'auto';
-            isAnimating = false;
-        }, 2000);
+    serverIpButtons.forEach(button => {
+        button.addEventListener('click', async (e) => {
+            e.preventDefault();
+            
+            if (isAnimating) return;
+            
+            const textToCopy = button.getAttribute('data-clipboard-text');
+            const originalText = button.textContent;
+            const copyMessage = button.getAttribute('data-copy-message');
+            isAnimating = true;
+            
+            try {
+                await navigator.clipboard.writeText(textToCopy);
+                button.textContent = copyMessage;
+            } catch (err) {
+                button.textContent = 'Erreur de copie';
+            }
+            
+            button.style.pointerEvents = 'none';
+            
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.style.pointerEvents = 'auto';
+                isAnimating = false;
+            }, 2000);
+        });
     });
 });
