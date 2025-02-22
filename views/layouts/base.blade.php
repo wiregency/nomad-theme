@@ -41,7 +41,6 @@
 
     <!-- Scripts -->
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}" defer></script>
-    <script src="{{ asset('vendor/clipboard/clipboard.min.js') }}" defer></script>
     <script src="{{ asset('vendor/axios/axios.min.js') }}" defer></script>
     <script src="{{ asset('js/script.js') }}" defer></script>
     <script src="{{ theme_asset('js/app.js') }}" defer></script>
