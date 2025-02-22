@@ -825,10 +825,52 @@
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.copyright {
+.copyright-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.copyright-main {
     color: #999;
     margin: 0;
     font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.copyright-sub {
+    color: #999;
+    margin: 0;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.copyright-sub a {
+    text-decoration: none;
+}
+
+.copyright-sub a:not(.footer-author) {
+    color: var(--primary-color);
+}
+
+.copyright-sub a:not(.footer-author):hover {
+    color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .copyright-wrapper {
+        text-align: center;
+    }
+    
+    .copyright-main,
+    .copyright-sub {
+        white-space: normal;
+        line-height: 1.4;
+    }
 }
 
 .footer-bottom-link {
@@ -870,90 +912,6 @@
     .footer-bottom-link {
         display: inline-block;
         margin: 0.5rem 0.75rem;
-    }
-}
-
-.login-section {
-    padding: 80px 0;
-    min-height: calc(100vh - 400px);
-    display: flex;
-    align-items: center;
-    background-color: white;
-}
-
-.login-wrapper {
-    background: white;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-}
-
-.login-title {
-    font-size: 2.4rem;
-    font-weight: 700;
-    color: #333;
-    margin-bottom: 1.5rem;
-    text-align: center;
-}
-
-.form-label {
-    color: #666;
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-}
-
-.form-control {
-    padding: 0.8rem 1rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-.form-control:focus {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 0.2rem rgba(255, 167, 38, 0.25);
-}
-
-.form-check-label {
-    color: #666;
-}
-
-.forgot-password {
-    color: var(--primary-color);
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.3s ease;
-}
-
-.forgot-password:hover {
-    color: var(--primary-color);
-}
-
-.btn-primary {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
-    padding: 0.8rem;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.btn-primary:hover {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
-    transform: translateY(-2px);
-}
-
-@media (max-width: 768px) {
-    .login-section {
-        padding: 40px 0;
-    }
-
-    .login-wrapper {
-        padding: 30px 20px;
-    }
-
-    .login-title {
-        font-size: 2rem;
     }
 }
 
