@@ -33,8 +33,10 @@
         <div class="footer-bottom">
             <div class="row align-items-center">
                 <div class="col-md-6">
-                    <p class="copyright">{{ setting('copyright') }} {{ trans('theme::nomad.footer.developed_by') }} <a
-                            href="https://discord.wiregency.com/" class="footer-author">WireGency</a>.</p>
+                    <div class="copyright-wrapper">
+                        <p class="copyright-main">{{ setting('copyright') }}</p>
+                        <p class="copyright-sub">@lang('messages.copyright') {{ trans('theme::nomad.footer.developed_by') }} <a href="https://discord.wiregency.com/" class="footer-author">WireGency</a></p>
+                    </div>
                 </div>
                 <div class="col-md-6 text-md-end">
                     @foreach (theme_config('legal_links') ?? [] as $link)
