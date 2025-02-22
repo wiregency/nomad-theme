@@ -84,6 +84,7 @@
                         <div class="notification-bell ms-1">
                             @include('elements.notifications')
                         </div>
+                    </div>
                     @else
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}"
@@ -94,6 +95,7 @@
                 </div>
             </div>
         </div>
+    </div>
 </nav>
 <section class="hero-section"
     style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('{{ setting('background') ? image_url(setting('background')) : '' }}'); background-size: cover; background-position: center; background-attachment: fixed;">
