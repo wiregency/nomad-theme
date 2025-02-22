@@ -22,8 +22,8 @@
                                         <h3 class="blog-title">{{ $post->title }}</h3>
                                         <div class="blog-meta">
                                             <span
-                                                class="blog-date">{{ $post->created_at->translatedFormat('d F Y') }}</span>
-                                        </div>
+                                            class="blog-date">{{ format_date($post->created_at) }}</span>
+                                            </div>
                                     </div>
                                 </div>
                             </a>
@@ -67,11 +67,11 @@
                         <p class="cta-description">{{ theme_config('cta_description') }}</p>
                         @if (!$servers->isEmpty())
                             @foreach ($servers as $server)
-                                <a class="btn btn-primary cta-button" id="server-ip"
+                                <button class="btn btn-primary cta-button server-ip"
                                     data-clipboard-text="{{ $server->fullAddress() }}"
                                     data-copy-message="{{ trans('theme::nomad.home.ip') }}">
                                     {{ $server->fullAddress() }}
-                                </a>
+                                </button>
                             @endforeach
                         @endif
                     </div>
