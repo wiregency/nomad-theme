@@ -64,19 +64,18 @@
     @include('elements.theme-color', ['color' => $themeColor])
 
 </head>
-<div id="app">
-    <header>
-        @include('elements.navbar')
-    </header>
+<body>
+    <div id="app">
+        <header>
+            @include('elements.navbar')
+        </header>
 
-    @yield('app')
-</div>
+        @yield('app')
+    </div>
 
-@include('elements.footer')
+    @include('elements.footer')
 
-
-@stack('footer-scripts')
-
+    @stack('footer-scripts')
 </body>
 
 </html>
