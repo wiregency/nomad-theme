@@ -7,6 +7,27 @@
 
 @push('footer-scripts')
     <script>
+        function handleCtaButtonTypeVisibility() {
+            const serverType = document.getElementById('buttonTypeServer');
+            const customFields = document.getElementById('customButtonFields');
+            
+            if (customFields) {
+                customFields.style.display = serverType.checked ? 'none' : 'block';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const serverType = document.getElementById('buttonTypeServer');
+            const customType = document.getElementById('buttonTypeCustom');
+
+            if (serverType && customType) {
+                serverType.addEventListener('change', handleCtaButtonTypeVisibility);
+                customType.addEventListener('change', handleCtaButtonTypeVisibility);
+                
+                handleCtaButtonTypeVisibility();
+            }
+        });
+
         function addLinkListener(el) {
             el.addEventListener('click', function () {
                 const element = el.closest('.row');
@@ -165,6 +186,42 @@
                             @error('cta_description')
                             <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
                             @enderror
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">{{ trans('theme::nomad.config.cta_button_type') }}</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="cta_button_type" id="buttonTypeServer" value="server" @checked(old('cta_button_type', theme_config('cta_button_type', 'server')) === 'server')>
+                                <label class="form-check-label" for="buttonTypeServer">
+                                    {{ trans('theme::nomad.config.cta_button_type_server') }}
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="cta_button_type" id="buttonTypeCustom" value="custom" @checked(old('cta_button_type', theme_config('cta_button_type')) === 'custom')>
+                                <label class="form-check-label" for="buttonTypeCustom">
+                                    {{ trans('theme::nomad.config.cta_button_type_custom') }}
+                                </label>
+                            </div>
+                        </div>
+
+                        <div id="customButtonFields" style="display: {{ old('cta_button_type', theme_config('cta_button_type', 'server')) === 'custom' ? 'block' : 'none' }}">
+                            <div class="mb-3">
+                                <label class="form-label" for="ctaButtonTextInput">{{ trans('theme::nomad.config.cta_button_text') }}</label>
+                                <input type="text" class="form-control @error('cta_button_text') is-invalid @enderror" id="ctaButtonTextInput" name="cta_button_text" value="{{ old('cta_button_text', theme_config('cta_button_text')) }}">
+
+                                @error('cta_button_text')
+                                <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+                                @enderror
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label" for="ctaButtonLinkInput">{{ trans('theme::nomad.config.cta_button_link') }}</label>
+                                <input type="url" class="form-control @error('cta_button_link') is-invalid @enderror" id="ctaButtonLinkInput" name="cta_button_link" value="{{ old('cta_button_link', theme_config('cta_button_link')) }}">
+
+                                @error('cta_button_link')
+                                <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+                                @enderror
+                            </div>
                         </div>
                     </div>
                 </div>
