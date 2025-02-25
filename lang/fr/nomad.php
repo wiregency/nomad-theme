@@ -29,6 +29,11 @@ return [
         'unique_players_label' => 'Label joueurs uniques',
         'record_players_label' => 'Label record de joueurs',
         'online_players_label' => 'Label joueurs en ligne',
+        'cta_button_type' => 'Type de bouton',
+        'cta_button_type_server' => 'IP du serveur (copie au clic)',
+        'cta_button_type_custom' => 'Bouton personnalisé',
+        'cta_button_text' => 'Texte du bouton',
+        'cta_button_link' => 'Lien du bouton',
     ],
     'home' => [
         'ip' => 'Adresse copiée !',
