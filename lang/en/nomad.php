@@ -29,6 +29,11 @@ return [
         'unique_players_label' => 'Unique players label',
         'record_players_label' => 'Player record label',
         'online_players_label' => 'Online players label',
+        'cta_button_type' => 'Button type',
+        'cta_button_type_server' => 'Server IP (copy on click)',
+        'cta_button_type_custom' => 'Custom button',
+        'cta_button_text' => 'Button text',
+        'cta_button_link' => 'Button link',
     ],
     'home' => [
         'ip' => 'Address copied!',
