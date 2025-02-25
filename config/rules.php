@@ -9,6 +9,9 @@ return [
     'record_players' => 'required|integer|min:0',
     'cta_title' => 'required|string',
     'cta_description' => 'required|string',
+    'cta_button_type' => 'required|string|in:server,custom',
+    'cta_button_text' => 'nullable|string',
+    'cta_button_link' => 'nullable|string|url',
     'about_image' => 'nullable|string',
     'about_title' => 'required|string',
     'about_description' => 'required|string',
@@ -19,3 +22,4 @@ return [
     'record_players_label' => 'required|string',
     'online_players_label' => 'required|string',
 ];
+
