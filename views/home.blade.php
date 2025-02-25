@@ -65,14 +65,20 @@
                     <div class="col-lg-8 text-center">
                         <h2 class="cta-title">{{ theme_config('cta_title') }}</h2>
                         <p class="cta-description">{{ theme_config('cta_description') }}</p>
-                        @if (!$servers->isEmpty())
-                            @foreach ($servers as $server)
-                                <button class="btn btn-primary cta-button server-ip"
-                                    data-clipboard-text="{{ $server->fullAddress() }}"
-                                    data-copy-message="{{ trans('theme::nomad.home.ip') }}">
-                                    {{ $server->fullAddress() }}
-                                </button>
-                            @endforeach
+                        @if(theme_config('cta_button_type', 'server') === 'server')
+                            @if (!$servers->isEmpty())
+                                @foreach ($servers as $server)
+                                    <button class="btn btn-primary cta-button server-ip"
+                                        data-clipboard-text="{{ $server->fullAddress() }}"
+                                        data-copy-message="{{ trans('theme::nomad.home.ip') }}">
+                                        {{ $server->fullAddress() }}
+                                    </button>
+                                @endforeach
+                            @endif
+                        @else
+                            <a href="{{ theme_config('cta_button_link') }}" class="btn btn-primary cta-button">
+                                {{ theme_config('cta_button_text') }}
+                            </a>
                         @endif
                     </div>
                 </div>
