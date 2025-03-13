@@ -1500,15 +1500,20 @@ body.dark-mode .footer-bottom-link:hover {
 }
 
 body.dark-mode a {
-    color: #1e90ff;
+    color: var(--primary-color);
 }
 
 body.dark-mode a:hover {
-    color: black;
+    color: #694f02;
 }
 body.dark-mode .card-body {
     color: white;
 }
+body.dark-mode #vote-card {
+    color: black;
+    background-color: #1e1e1e;
+}
+
 /* Mode sombre END */
 
 
