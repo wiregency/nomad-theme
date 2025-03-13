@@ -111,14 +111,22 @@
                         <div class="mb-3">
                             <label class="form-label" for="colorInput">{{ trans('messages.fields.color') }}</label>
                             <input type="color" class="form-control form-control-color color-picker @error('color') is-invalid @enderror" id="colorInput" name="color" value="{{ old('color', theme_config('color', '#c0392b')) }}" required>
-
                             @error('color')
                             <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
                             @enderror
                         </div>
+                        <div class="mb-3">
+                             <label class="form-label" for="darkModeInput">Activer le mode sombre</label>
+                             <div>
+                             <input type="checkbox" class="form-check-input" id="darkModeInput" name="dark_mode" value="1" {{ old('dark_mode', theme_config('dark_mode')) ? 'checked' : '' }}>
+                             </div>
+                             <small class="form-text text-muted">Activez cette option pour appliquer le mode sombre à tout le site.</small>
+                             @error('dark_mode')
+                             <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+                             @enderror
+                        </div>
                     </div>
                 </div>
-
                 <h4 class="mb-3">{{ trans('theme::nomad.config.about_section') }}</h4>
                 <div class="card bg-light mb-4">
                     <div class="card-body">

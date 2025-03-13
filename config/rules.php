@@ -21,5 +21,6 @@ return [
     'unique_players_label' => 'required|string',
     'record_players_label' => 'required|string',
     'online_players_label' => 'required|string',
+    'dark_mode' => 'boolean',
 ];
 
