@@ -1270,3 +1270,250 @@
         height: 28px;
     }
 }
+
+
+/* Mode sombre START */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0; 
+}
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+    color: #ffffff;
+}
+
+body.dark-mode .navbar {
+    background: rgba(26, 26, 26, 0.9);
+    backdrop-filter: blur(10px);
+}
+
+body.dark-mode .nav-link,
+body.dark-mode .player-btn,
+body.dark-mode .player-name {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .nav-link:hover,
+body.dark-mode .player-btn:hover {
+    color: var(--primary-color);
+}
+
+body.dark-mode .auth-button {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+body.dark-mode .auth-button:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+body.dark-mode .dropdown-menu {
+    background-color: rgba(26, 26, 26, 0.95); 
+}
+
+body.dark-mode .dropdown-item {
+    color: #e0e0e0;
+}
+
+body.dark-mode .dropdown-item:hover {
+    color: var(--primary-color);
+    background-color: rgba(255, 255, 255, 0.1); 
+}
+
+body.dark-mode .hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
+}
+
+body.dark-mode .hero-curve {
+    background: #121212;
+}
+
+body.dark-mode .blog-section {
+    background-color: #121212;
+}
+
+body.dark-mode .blog-card {
+    background: #1e1e1e; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .blog-title {
+    color: #e0e0e0;
+}
+
+body.dark-mode .blog-date {
+    background: #2a2a2a;
+    color: #b0b0b0;
+}
+
+body.dark-mode .blog-meta {
+    color: #b0b0b0;
+}
+
+body.dark-mode .about-section {
+    background-color: #121212;
+}
+
+body.dark-mode .section-title {
+    color: #ffffff;
+}
+
+body.dark-mode .description {
+    color: #d0d0d0;
+}
+
+body.dark-mode .stats-section {
+    background-color: #121212;
+}
+
+body.dark-mode .stats-card {
+    background: #1e1e1e;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .stats-value {
+    color: #ffffff;
+}
+
+body.dark-mode .stats-label {
+    color: #b0b0b0;
+}
+
+body.dark-mode .cta-wrapper {
+    background-color: #1e1e1e;
+    box-shadow: 0 0 50px rgba(255, 167, 38, 0.2);
+}
+
+body.dark-mode .cta-title,
+body.dark-mode .cta-description {
+    color: #ffffff;
+}
+
+body.dark-mode .cta-button {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+body.dark-mode .cta-button:hover {
+    background-color: var(--primary-color);
+}
+
+body.dark-mode .vote-section {
+    background-color: #121212;
+}
+
+body.dark-mode .card {
+    background-color: #1e1e1e;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .card-title,
+body.dark-mode .player-name,
+body.dark-mode .reward-name {
+    color: #ffffff;
+}
+
+body.dark-mode .section-title {
+    color: #ffffff;
+}
+
+body.dark-mode .subtitle,
+body.dark-mode .vote-count,
+body.dark-mode .reward-chance,
+body.dark-mode .text-muted {
+    color: #b0b0b0 !important;
+}
+
+body.dark-mode .leaderboard-item:hover,
+body.dark-mode .reward-item:hover {
+    background-color: #2a2a2a;
+}
+
+body.dark-mode .form-control {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    border-color: #444444;
+}
+
+body.dark-mode .form-control::placeholder {
+    color: #888888;
+}
+
+body.dark-mode .form-control:focus {
+    background-color: #333333;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(240, 177, 0, 0.25);
+}
+
+body.dark-mode .btn-primary {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+body.dark-mode .btn-primary:hover {
+    background-color: var(--primary-color);
+}
+
+body.dark-mode .footer {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+body.dark-mode .footer-description,
+body.dark-mode .footer-links a,
+body.dark-mode .copyright-main,
+body.dark-mode .copyright-sub {
+    color: #b0b0b0;
+}
+
+body.dark-mode .footer-links a:hover {
+    color: var(--primary-color);
+}
+
+body.dark-mode .footer-title {
+    color: #ffffff;
+}
+
+body.dark-mode .social-links a {
+    color: #b0b0b0;
+}
+
+body.dark-mode .social-links a:hover {
+    color: var(--primary-color);
+}
+
+body.dark-mode .footer-bottom {
+    border-top-color: rgba(255, 255, 255, 0.15);
+}
+
+body.dark-mode .footer-bottom-link {
+    color: #b0b0b0;
+}
+
+body.dark-mode .footer-bottom-link:hover {
+    color: var(--primary-color);
+}
+
+body.dark-mode a {
+    color: var(--primary-color);
+}
+
+body.dark-mode a:hover {
+    color: #694f02;
+}
+body.dark-mode .card-body {
+    color: white;
+}
+body.dark-mode #vote-card {
+    color: black;
+    background-color: #1e1e1e;
+}
+
+/* Mode sombre END */
+
+

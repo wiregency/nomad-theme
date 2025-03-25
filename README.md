@@ -11,5 +11,3 @@ Made by <a href="https://github.com/pkhemae" target="_blank">Khémara Parc</a> a
 <img src="https://market.azuriom.com/storage/resources/attachments/cyUTmXaLPMRwfB8EVNwBFBb7O8rYgZTMbuACOQZm.png" width="1000">
 <img src="https://market.azuriom.com/storage/resources/attachments/5KNMWkAI5mdSrr8hT73SANz4GqeoURJcQprFjDsR.png" width="1000">
 <img src="https://market.azuriom.com/storage/resources/attachments/MBVZYSWGHsYWTfwqd3mF3Yy8dfIbbWkAjkWlmKQv.png" width="1000">
-
-
