@@ -44,6 +44,7 @@
     <script src="{{ asset('vendor/axios/axios.min.js') }}" defer></script>
     <script src="{{ asset('js/script.js') }}" defer></script>
     <script src="{{ theme_asset('js/app.js') }}" defer></script>
+    
 
     <!-- Page level scripts -->
     @stack('scripts')
@@ -64,7 +65,7 @@
     @include('elements.theme-color', ['color' => $themeColor])
 
 </head>
-<body>
+<body class="{{ theme_config('dark_mode') ? 'dark-mode' : '' }}">
     <div id="app">
         <header>
             @include('elements.navbar')
