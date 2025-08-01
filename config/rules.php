@@ -2,7 +2,12 @@
 
 return [
     'color' => ['required', new \Azuriom\Rules\Color()],
+    'banner_enabled' => 'nullable|boolean',
+    'banner_color' => 'nullable|string',
+    'banner_interval' => 'nullable|integer|min:1|max:60',
+    'banner_texts' => 'nullable|array',
     'footer_description' => 'required|string',
+    'footer_order' => 'nullable|array',
     'footer_links' => 'nullable|array',
     'legal_links' => 'nullable|array',
     'unique_players' => 'required|integer|min:0',

@@ -44,6 +44,7 @@
     <script src="{{ asset('vendor/axios/axios.min.js') }}" defer></script>
     <script src="{{ asset('js/script.js') }}" defer></script>
     <script src="{{ theme_asset('js/app.js') }}" defer></script>
+    <script src="{{ theme_asset('js/banner.js') }}" defer></script>
 
     <!-- Page level scripts -->
     @stack('scripts')

@@ -1,4 +1,30 @@
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    @if(theme_config('banner_enabled', true))
+    <div class="top-banner" style="background-color: {{ theme_config('banner_color', '#ff3e3e') }};">
+        <div class="container">
+            <div class="banner-content">
+                @php
+                    $banners = theme_config('banner_texts', [
+                        ['text' => 'Bienvenue sur ' . site_name() . ' - Le serveur Minecraft ultime !']
+                    ]);
+                    $interval = theme_config('banner_interval', 5) * 1000; 
+                @endphp
+                
+                @if(count($banners) > 1)
+                    <span class="banner-text" 
+                          id="dynamicBanner" 
+                          data-banners='@json(array_column($banners, 'text'))'
+                          data-interval="{{ $interval }}">
+                        {{ $banners[0]['text'] }}
+                    </span>
+                @else
+                    <span class="banner-text">{{ $banners[0]['text'] ?? 'Bienvenue sur ' . site_name() . ' - Le serveur Minecraft ultime !' }}</span>
+                @endif
+            </div>
+        </div>
+    </div>
+    @endif
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top @if(theme_config('banner_enabled', true)) banner-enabled @endif">
     <div class="container">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -97,7 +123,7 @@
         </div>
     </div>
 </nav>
-<section class="hero-section"
+<section class="hero-section @if(theme_config('banner_enabled', true)) banner-enabled @endif"
     style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('{{ setting('background') ? image_url(setting('background')) : '' }}'); background-size: cover; background-position: center; background-attachment: fixed;">
     <div class="hero-content">
         <div class="container text-center">
