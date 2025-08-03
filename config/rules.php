@@ -14,6 +14,7 @@ return [
     'footer_about_title' => 'nullable|string',
     'footer_links_title' => 'nullable|string',
     'footer_social_title' => 'nullable|string',
+    'articles_default_image' => 'nullable|string',
     'unique_players' => 'required|integer|min:0',
     'record_players' => 'required|integer|min:0',
     'cta_title' => 'required|string',

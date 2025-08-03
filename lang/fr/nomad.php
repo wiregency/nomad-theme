@@ -139,6 +139,10 @@ return [
         'theme_support_description' => 'Besoin d\'aide ou envie d\'un thème personnalisé ?',
         'theme_discord_support' => 'Support Discord',
         'theme_custom_orders' => 'Commandes personnalisées',
+        'articles_title' => 'Articles',
+        'articles_description' => 'Configurez l\'apparence des articles sur votre page d\'accueil.',
+        'articles_default_image_title' => 'Image par défaut des articles',
+        'articles_default_image_info' => 'Cette image sera utilisée pour les articles qui n\'ont pas d\'image personnalisée.',
         ],
     ],
     'home' => [

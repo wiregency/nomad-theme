@@ -237,6 +237,9 @@
                             <a class="nav-link" data-tab="footer" href="#" role="tab">
                                 <i class="bi bi-layout-text-window-reverse me-2"></i> {{ trans('theme::nomad.config.admin.nav_footer') }}
                             </a>
+                            <a class="nav-link" data-tab="articles" href="#" role="tab">
+                                <i class="bi bi-newspaper me-2"></i> {{ trans('theme::nomad.config.admin.articles_title') }}
+                            </a>
                     </div>
                 </div>
 
@@ -247,6 +250,7 @@
                         @include('admin.config.partials.cta')
                         @include('admin.config.partials.stats')
                         @include('admin.config.partials.footer')
+                        @include('admin.config.partials.articles')
                     </div>
                 </div>
 

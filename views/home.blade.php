@@ -17,6 +17,8 @@
                                 <div class="blog-card">
                                     @if ($post->hasImage())
                                         <img src="{{ $post->imageUrl() }}" alt="{{ $post->title }}" class="blog-image">
+                                    @elseif (theme_config('articles_default_image'))
+                                        <img src="{{ image_url(theme_config('articles_default_image')) }}" alt="{{ $post->title }}" class="blog-image">
                                     @endif
                                     <div class="blog-content">
                                         <h3 class="blog-title">{{ $post->title }}</h3>

@@ -139,6 +139,10 @@ return [
         'theme_support_description' => 'Need help or want a custom theme?',
         'theme_discord_support' => 'Discord Support',
         'theme_custom_orders' => 'Custom Orders',
+        'articles_title' => 'Articles',
+        'articles_description' => 'Configure the appearance of articles on your homepage.',
+        'articles_default_image_title' => 'Default article image',
+        'articles_default_image_info' => 'This image will be used for articles that don\'t have a custom image.',
         ],
     ],
     'home' => [
