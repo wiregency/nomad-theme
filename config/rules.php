@@ -2,6 +2,7 @@
 
 return [
     'color' => ['required', new \Azuriom\Rules\Color()],
+    'logo_size' => 'nullable|integer|min:50|max:800',
     'banner_enabled' => 'nullable|boolean',
     'banner_color' => 'nullable|string',
     'banner_interval' => 'nullable|integer|min:1|max:60',

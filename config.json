@@ -1,5 +1,6 @@
 {
-    "color": "#ffc107",
+    "color": "#ff0e0b",
+    "logo_size": "400",
     "banner_enabled": "1",
     "banner_color": "#af0d0d",
     "banner_interval": "5",

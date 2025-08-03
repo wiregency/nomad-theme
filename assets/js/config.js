@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initFooterLinksManagement();
     initFooterOrderSortable();
     initBannerManagement();
+    initLogoSizeSlider();
 });
 
 function initConfigTabs() {
@@ -235,6 +236,17 @@ function addBannerListener(el) {
             element.remove();
         }
     });
+}
+
+function initLogoSizeSlider() {
+    const logoSizeInput = document.getElementById('logoSizeInput');
+    const logoSizeValue = document.getElementById('logoSizeValue');
+    
+    if (logoSizeInput && logoSizeValue) {
+        logoSizeInput.addEventListener('input', function() {
+            logoSizeValue.textContent = this.value + 'px';
+        });
+    }
 }
 
 function addBanner() {

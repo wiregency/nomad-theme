@@ -127,7 +127,7 @@
     style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('{{ setting('background') ? image_url(setting('background')) : '' }}'); background-size: cover; background-position: center; background-attachment: fixed;">
     <div class="hero-content">
         <div class="container text-center">
-            <img src="{{ site_logo() }}" alt="{{ site_name() }}" class="hero-logo">
+            <img src="{{ site_logo() }}" alt="{{ site_name() }}" class="hero-logo" style="max-width: {{ theme_config('logo_size', 200) }}px; height: auto;">
         </div>
     </div>
     <div class="hero-curve"></div>
