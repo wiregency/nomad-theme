@@ -240,6 +240,9 @@
                             <a class="nav-link" data-tab="articles" href="#" role="tab">
                                 <i class="bi bi-newspaper me-2"></i> {{ trans('theme::nomad.config.admin.articles_title') }}
                             </a>
+                            <a class="nav-link" data-tab="vote" href="#" role="tab">
+                                <i class="bi bi-award-fill me-2"></i> {{ trans('theme::nomad.config.admin.vote_title') }}
+                            </a>
                     </div>
                 </div>
 
@@ -251,6 +254,7 @@
                         @include('admin.config.partials.stats')
                         @include('admin.config.partials.footer')
                         @include('admin.config.partials.articles')
+                        @include('admin.config.partials.vote')
                     </div>
                 </div>
 

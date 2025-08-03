@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initFooterOrderSortable();
     initBannerManagement();
     initLogoSizeSlider();
+    initVoteRewardsManagement();
 });
 
 function initConfigTabs() {
@@ -293,4 +294,98 @@ function addBanner() {
 
     const newRemoveButton = document.querySelector('#banner-texts .banner-item:last-child .banner-remove');
     addBannerListener(newRemoveButton);
+}
+
+function initVoteRewardsManagement() {
+    document.querySelectorAll('.vote-reward-remove').forEach(function (el) {
+        addVoteRewardListener(el);
+    });
+
+    const addVoteRewardButton = document.getElementById('addVoteRewardButton');
+    if (addVoteRewardButton) {
+        addVoteRewardButton.addEventListener('click', function () {
+            addVoteReward();
+        });
+    }
+}
+
+function addVoteRewardListener(el) {
+    el.addEventListener('click', function () {
+        const element = el.closest('.vote-reward-card');
+        if (element) {
+            element.remove();
+        }
+    });
+}
+
+function addVoteReward() {
+    const timestamp = Date.now();
+    const positionLabel = document.querySelector('[data-lang="vote-reward-position"]')?.textContent || 'Position';
+    const rewardLabel = document.querySelector('[data-lang="vote-reward-reward"]')?.textContent || 'Récompense';
+    const colorLabel = document.querySelector('[data-lang="vote-reward-color"]')?.textContent || 'Couleur';
+    const positionPlaceholder = document.querySelector('[data-lang="vote-reward-position-placeholder"]')?.textContent || '1 ou 1-3';
+    const rewardPlaceholder = document.querySelector('[data-lang="vote-reward-reward-placeholder"]')?.textContent || '500 crystaux';
+    const positionInfo = document.querySelector('[data-lang="vote-reward-position-info"]')?.textContent || 'Position ou plage';
+    const rewardInfo = document.querySelector('[data-lang="vote-reward-reward-info"]')?.textContent || 'Description';
+    const colorInfo = document.querySelector('[data-lang="vote-reward-color-info"]')?.textContent || 'Couleur de la carte';
+    const removeTitle = document.querySelector('[data-lang="remove"]')?.textContent || 'Supprimer';
+    
+    let input = `<div class="card mb-3 vote-reward-card border-secondary">
+        <div class="card-body">
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="form-label fw-semibold">
+                            <i class="bi bi-hash me-2"></i>
+                            ${positionLabel}
+                        </label>
+                        <input type="text" class="form-control" name="vote_rewards[${timestamp}][position]" placeholder="${positionPlaceholder}">
+                        <div class="form-text">
+                            ${positionInfo}
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="form-label fw-semibold">
+                            <i class="bi bi-gift me-2"></i>
+                            ${rewardLabel}
+                        </label>
+                        <input type="text" class="form-control" name="vote_rewards[${timestamp}][reward]" placeholder="${rewardPlaceholder}">
+                        <div class="form-text">
+                            ${rewardInfo}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label class="form-label fw-semibold">
+                            <i class="bi bi-palette me-2"></i>
+                            ${colorLabel}
+                        </label>
+                        <input type="color" class="form-control form-control-color color-picker" name="vote_rewards[${timestamp}][color]" value="#f0b000">
+                        <div class="form-text">
+                            ${colorInfo}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-1">
+                    <div class="form-group">
+                        <label class="form-label fw-semibold">&nbsp;</label>
+                        <button class="btn btn-outline-danger btn-sm vote-reward-remove w-100" type="button" title="${removeTitle}">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>`;
+
+    document.querySelector('#vote-rewards-container').insertAdjacentHTML('beforeend', input);
+
+    const newRemoveButton = document.querySelector('#vote-rewards-container .vote-reward-card:last-child .vote-reward-remove');
+    addVoteRewardListener(newRemoveButton);
 }

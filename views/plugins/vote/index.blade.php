@@ -7,7 +7,7 @@
         <div class="container">
             <div class="text-center mb-5">
                 <h2 class="section-title">{{ trans('vote::messages.sections.vote') }}</h2>
-                <p class="subtitle">{{ trans('theme::nomad.vote.description') }}</p>
+                <p class="subtitle">{{ theme_config('vote_page_description', trans('theme::nomad.vote.description')) }}</p>
             </div>
             <div class="card mb-4">
                 <div class="card-body text-center position-relative" id="vote-card">
@@ -36,6 +36,7 @@
                                     rel="noopener noreferrer" data-vote-id="{{ $site->id }}"
                                     data-vote-url="{{ route('vote.vote', $site) }}"
                                     @auth data-vote-time="{{ $site->getNextVoteTime($user, $request)?->valueOf() }}" @endauth>
+                                    <i class="{{ theme_config('vote_site_icon', 'bi bi-award') }} me-2"></i>
                                     <span class="badge bg-secondary text-white vote-timer"></span> {{ $site->name }}
                                 </a>
                             @empty
@@ -60,9 +61,26 @@
             <div class="card">
                 <div class="card-body">
                     <h2 class="card-title">{{ trans('vote::messages.sections.top') }}</h2>
-                    <p class="text-muted mb-4">{{ trans('theme::nomad.vote.subtitle') }}</p>
+                    <p class="text-muted mb-4">{{ theme_config('vote_ranking_description', trans('theme::nomad.vote.subtitle')) }}</p>
                     <div class="table">
                         @foreach ($votes as $id => $vote)
+                            @php
+                                $reward = null;
+                                foreach(theme_config('vote_rewards', []) as $configReward) {
+                                    if (str_contains($configReward['position'], '-')) {
+                                        [$start, $end] = explode('-', $configReward['position']);
+                                        if ($id >= (int)$start && $id <= (int)$end) {
+                                            $reward = $configReward;
+                                            break;
+                                        }
+                                    } else {
+                                        if ($id == (int)$configReward['position']) {
+                                            $reward = $configReward;
+                                            break;
+                                        }
+                                    }
+                                }
+                            @endphp
                             <div class="leaderboard-item">
                                 <span class="rank">#{{ $id }}</span>
                                 <div class="player-info">
@@ -72,6 +90,11 @@
                                 </div>
                                 <span class="vote-count">{{ $vote->votes }}
                                     {{ trans('vote::messages.fields.votes') }}</span>
+                                @if($reward)
+                                    <div class="vote-reward-badge" style="background-color: {{ $reward['color'] ?? '#f0b000' }};">
+                                        {{ $reward['reward'] }}
+                                    </div>
+                                @endif
                             </div>
                         @endforeach
                     </div>
@@ -85,6 +108,7 @@
                 <div class="card mt-4">
                     <div class="card-body">
                         <h2 class="card-title">{{ trans('vote::messages.sections.rewards') }}</h2>
+                        <p class="text-muted mb-4">{{ theme_config('vote_rewards_description', 'Voici les récompenses que vous pouvez gagner en votant !') }}</p>
                         <div class="table">
                             @foreach ($rewards as $reward)
                                 <div class="reward-item">
@@ -142,6 +166,25 @@
         .spinner-border {
             width: 3rem;
             height: 3rem;
+        }
+
+        .vote-reward-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #171717;
+            margin-left: 1rem;
+            white-space: nowrap;
+            display: inline-block;
+        }
+
+        @media (max-width: 768px) {
+            .vote-reward-badge {
+                margin-left: 0;
+                margin-top: 0.5rem;
+                font-size: 0.75rem;
+            }
         }
     </style>
 @endpush
