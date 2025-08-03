@@ -1,5 +1,5 @@
 {
-    "color": "#ff0e0b",
+    "color": "#ffc107",
     "logo_size": "400",
     "banner_enabled": "1",
     "banner_color": "#af0d0d",
@@ -12,7 +12,7 @@
             "text": "Le serveur du moment !"
         }
     },
-    "footer_description": "Rejoignez notre communaut\u00e9 Minecraft et plongez dans une aventure exceptionnelle aux c\u00f4t\u00e9s de joueurs passionn\u00e9s. Construisez, explorez et relevez des d\u00e9fis \u00e9piques dans un univers sans limite..",
+    "footer_description": "Rejoignez notre communaut\u00e9 Minecraft et plongez dans une aventure exceptionnelle aux c\u00f4t\u00e9s de joueurs passionn\u00e9s. Construisez, explorez et relevez des d\u00e9fis \u00e9piques dans un univers sans limite.",
     "footer_order": [
         "about",
         "links",
@@ -38,6 +38,9 @@
             "value": "https://azuriom.com"
         }
     },
+    "footer_about_title": "\u00c0 propos",
+    "footer_links_title": "Liens utiles",
+    "footer_social_title": "R\u00e9seaux sociaux",
     "unique_players": "150",
     "record_players": "276",
     "cta_title": "Pr\u00eat \u00e0 commencer l'aventure ?",

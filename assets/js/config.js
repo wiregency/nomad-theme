@@ -110,16 +110,27 @@ function addFooterLink() {
     const urlLabel = document.querySelector('[data-lang="url-label"]')?.textContent || 'URL du lien';
     const namePlaceholder = document.querySelector('[data-lang="name-placeholder"]')?.textContent || 'Nom';
     const linkPlaceholder = document.querySelector('[data-lang="link-placeholder"]')?.textContent || 'Lien';
+    const newTabLabel = document.querySelector('[data-lang="new-tab-label"]')?.textContent || 'Ouvrir dans un nouvel onglet';
+    const newTabHelp = document.querySelector('[data-lang="new-tab-help"]')?.textContent || 'Cochez cette case pour que le lien s\'ouvre dans un nouvel onglet';
     
     let input = `<div class="link-item mb-3 p-3 border rounded bg-light">
         <div class="row g-3">
-            <div class="col-md-5">
+            <div class="col-md-4">
                 <label class="form-label fw-semibold">${nameLabel}</label>
                 <input type="text" class="form-control" name="footer_links[${timestamp}][name]" placeholder="${namePlaceholder}">
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <label class="form-label fw-semibold">${urlLabel}</label>
                 <input type="url" class="form-control" name="footer_links[${timestamp}][value]" placeholder="${linkPlaceholder}">
+            </div>
+            <div class="col-md-3">
+                <label class="form-label fw-semibold">${newTabLabel}</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="footer_links[${timestamp}][new_tab]" value="1" id="footer_link_new_tab_${timestamp}">
+                    <label class="form-check-label small text-muted" for="footer_link_new_tab_${timestamp}">
+                        ${newTabHelp}
+                    </label>
+                </div>
             </div>
             <div class="col-md-1 d-flex align-items-end">
                 <button class="btn btn-outline-danger btn-sm link-remove" type="button" title="Supprimer">
@@ -141,16 +152,27 @@ function addLegalLink() {
     const urlLabel = document.querySelector('[data-lang="url-label"]')?.textContent || 'URL du lien';
     const namePlaceholder = document.querySelector('[data-lang="name-placeholder"]')?.textContent || 'Nom';
     const linkPlaceholder = document.querySelector('[data-lang="link-placeholder"]')?.textContent || 'Lien';
+    const newTabLabel = document.querySelector('[data-lang="new-tab-label"]')?.textContent || 'Ouvrir dans un nouvel onglet';
+    const newTabHelp = document.querySelector('[data-lang="new-tab-help"]')?.textContent || 'Cochez cette case pour que le lien s\'ouvre dans un nouvel onglet';
     
     let input = `<div class="link-item mb-3 p-3 border rounded bg-light">
         <div class="row g-3">
-            <div class="col-md-5">
+            <div class="col-md-4">
                 <label class="form-label fw-semibold">${nameLabel}</label>
                 <input type="text" class="form-control" name="legal_links[${timestamp}][name]" placeholder="${namePlaceholder}">
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <label class="form-label fw-semibold">${urlLabel}</label>
                 <input type="url" class="form-control" name="legal_links[${timestamp}][value]" placeholder="${linkPlaceholder}">
+            </div>
+            <div class="col-md-3">
+                <label class="form-label fw-semibold">${newTabLabel}</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="legal_links[${timestamp}][new_tab]" value="1" id="legal_link_new_tab_${timestamp}">
+                    <label class="form-check-label small text-muted" for="legal_link_new_tab_${timestamp}">
+                        ${newTabHelp}
+                    </label>
+                </div>
             </div>
             <div class="col-md-1 d-flex align-items-end">
                 <button class="btn btn-outline-danger btn-sm legal-link-remove" type="button" title="Supprimer">

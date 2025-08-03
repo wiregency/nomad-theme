@@ -13,6 +13,51 @@
         <div class="card">
             <div class="card-header">
                 <h5 class="card-title mb-0">
+                    <i class="bi bi-type me-2"></i>
+                    {{ trans('theme::nomad.config.admin.footer_order_title') }}
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <label class="form-label" for="footerAboutTitleInput">{{ trans('theme::nomad.config.admin.footer_about_title') }}</label>
+                        <input type="text" class="form-control @error('footer_about_title') is-invalid @enderror" 
+                               id="footerAboutTitleInput" name="footer_about_title"
+                               placeholder="{{ trans('theme::nomad.config.admin.footer_about_title_placeholder') }}"
+                               value="{{ old('footer_about_title', theme_config('footer_about_title')) }}">
+                        @error('footer_about_title')
+                        <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+                        @enderror
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label" for="footerLinksTitleInput">{{ trans('theme::nomad.config.admin.footer_links_title_section') }}</label>
+                        <input type="text" class="form-control @error('footer_links_title') is-invalid @enderror" 
+                               id="footerLinksTitleInput" name="footer_links_title"
+                               placeholder="{{ trans('theme::nomad.config.admin.footer_links_title_placeholder') }}"
+                               value="{{ old('footer_links_title', theme_config('footer_links_title')) }}">
+                        @error('footer_links_title')
+                        <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+                        @enderror
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label" for="footerSocialTitleInput">{{ trans('theme::nomad.config.admin.footer_social_title_section') }}</label>
+                        <input type="text" class="form-control @error('footer_social_title') is-invalid @enderror" 
+                               id="footerSocialTitleInput" name="footer_social_title"
+                               placeholder="{{ trans('theme::nomad.config.admin.footer_social_title_placeholder') }}"
+                               value="{{ old('footer_social_title', theme_config('footer_social_title')) }}">
+                        @error('footer_social_title')
+                        <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+                        @enderror
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="config-card">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title mb-0">
                     <i class="bi bi-arrows-move me-2"></i>
                     {{ trans('theme::nomad.config.admin.footer_order_title') }}
                 </h5>
@@ -133,12 +178,14 @@
                 <span data-lang="url-label" class="d-none">{{ trans('theme::nomad.config.admin.url_label') }}</span>
                 <span data-lang="name-placeholder" class="d-none">{{ trans('messages.fields.name') }}</span>
                 <span data-lang="link-placeholder" class="d-none">{{ trans('messages.fields.link') }}</span>
+                <span data-lang="new-tab-label" class="d-none">{{ trans('theme::nomad.config.admin.new_tab_label') }}</span>
+                <span data-lang="new-tab-help" class="d-none">{{ trans('theme::nomad.config.admin.new_tab_help') }}</span>
 
                 <div id="links">
                     @forelse(theme_config('footer_links') ?? [] as $index => $link)
                         <div class="link-item mb-3 p-3 border rounded bg-light">
                             <div class="row g-3">
-                                <div class="col-md-5">
+                                <div class="col-md-4">
                                     <label class="form-label fw-semibold">{{ trans('theme::nomad.config.admin.name_label') }}</label>
                                     <input type="text" class="form-control" 
                                            name="footer_links[{{ $index }}][name]" 
@@ -146,12 +193,26 @@
                                            value="{{ $link['name'] }}">
                                 </div>
 
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <label class="form-label fw-semibold">{{ trans('theme::nomad.config.admin.url_label') }}</label>
                                     <input type="url" class="form-control" 
                                            name="footer_links[{{ $index }}][value]" 
                                            placeholder="{{ trans('messages.fields.link') }}" 
                                            value="{{ $link['value'] }}">
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label class="form-label fw-semibold">{{ trans('theme::nomad.config.admin.new_tab_label') }}</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" 
+                                               name="footer_links[{{ $index }}][new_tab]" 
+                                               value="1" 
+                                               id="footer_link_new_tab_{{ $index }}"
+                                               {{ isset($link['new_tab']) && $link['new_tab'] ? 'checked' : '' }}>
+                                        <label class="form-check-label small text-muted" for="footer_link_new_tab_{{ $index }}">
+                                            {{ trans('theme::nomad.config.admin.new_tab_help') }}
+                                        </label>
+                                    </div>
                                 </div>
 
                                 <div class="col-md-1 d-flex align-items-end">
@@ -195,7 +256,7 @@
                     @forelse(theme_config('legal_links') ?? [] as $index => $link)
                         <div class="link-item mb-3 p-3 border rounded bg-light">
                             <div class="row g-3">
-                                <div class="col-md-5">
+                                <div class="col-md-4">
                                     <label class="form-label fw-semibold">{{ trans('theme::nomad.config.admin.name_label') }}</label>
                                     <input type="text" class="form-control" 
                                            name="legal_links[{{ $index }}][name]" 
@@ -203,12 +264,26 @@
                                            value="{{ $link['name'] }}">
                                 </div>
 
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <label class="form-label fw-semibold">{{ trans('theme::nomad.config.admin.url_label') }}</label>
                                     <input type="url" class="form-control" 
                                            name="legal_links[{{ $index }}][value]" 
                                            placeholder="{{ trans('messages.fields.link') }}" 
                                            value="{{ $link['value'] }}">
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label class="form-label fw-semibold">{{ trans('theme::nomad.config.admin.new_tab_label') }}</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" 
+                                               name="legal_links[{{ $index }}][new_tab]" 
+                                               value="1" 
+                                               id="legal_link_new_tab_{{ $index }}"
+                                               {{ isset($link['new_tab']) && $link['new_tab'] ? 'checked' : '' }}>
+                                        <label class="form-check-label small text-muted" for="legal_link_new_tab_{{ $index }}">
+                                            {{ trans('theme::nomad.config.admin.new_tab_help') }}
+                                        </label>
+                                    </div>
                                 </div>
 
                                 <div class="col-md-1 d-flex align-items-end">

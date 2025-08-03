@@ -9,7 +9,8 @@
                     'about' => [
                         'class' => 'col-lg-5 mb-4 mb-lg-0',
                         'content' => function() {
-                            $html = '<h5 class="footer-title">' . trans('theme::nomad.footer.about') . '</h5>';
+                            $title = theme_config('footer_about_title') ?: trans('theme::nomad.footer.about');
+                            $html = '<h5 class="footer-title">' . $title . '</h5>';
                             $html .= '<p class="footer-description">' . theme_config('footer_description') . '</p>';
                             return $html;
                         }
@@ -17,10 +18,12 @@
                     'links' => [
                         'class' => 'col-lg-3 col-md-6 mb-4 mb-lg-0',
                         'content' => function() {
-                            $html = '<h5 class="footer-title">' . trans('theme::nomad.footer.links') . '</h5>';
+                            $title = theme_config('footer_links_title') ?: trans('theme::nomad.footer.links');
+                            $html = '<h5 class="footer-title">' . $title . '</h5>';
                             $html .= '<ul class="footer-links">';
                             foreach (theme_config('footer_links') ?? [] as $link) {
-                                $html .= '<li><a href="' . $link['value'] . '">' . $link['name'] . '</a></li>';
+                                $target = isset($link['new_tab']) && $link['new_tab'] ? ' target="_blank" rel="noopener noreferrer"' : '';
+                                $html .= '<li><a href="' . $link['value'] . '"' . $target . '>' . $link['name'] . '</a></li>';
                             }
                             $html .= '</ul>';
                             return $html;
@@ -29,7 +32,8 @@
                     'social' => [
                         'class' => 'col-lg-3 col-md-6',
                         'content' => function() {
-                            $html = '<h5 class="footer-title">' . trans('theme::nomad.footer.social') . '</h5>';
+                            $title = theme_config('footer_social_title') ?: trans('theme::nomad.footer.social');
+                            $html = '<h5 class="footer-title">' . $title . '</h5>';
                             $html .= '<div class="social-links d-flex flex-wrap">';
                             foreach (social_links() as $link) {
                                 $html .= '<a href="' . $link->value . '" target="_blank" rel="noopener noreferrer"><i class="' . $link->icon . '"></i></a>';
@@ -59,7 +63,10 @@
                 </div>
                 <div class="col-md-6 text-md-end">
                     @foreach (theme_config('legal_links') ?? [] as $link)
-                        <a href="{{ $link['value'] }}" class="footer-bottom-link">{{ $link['name'] }}</a>
+                        @php
+                            $target = isset($link['new_tab']) && $link['new_tab'] ? ' target="_blank" rel="noopener noreferrer"' : '';
+                        @endphp
+                        <a href="{{ $link['value'] }}" class="footer-bottom-link"{{ $target }}>{{ $link['name'] }}</a>
                     @endforeach
                 </div>
             </div>
