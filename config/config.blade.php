@@ -243,6 +243,9 @@
                             <a class="nav-link" data-tab="vote" href="#" role="tab">
                                 <i class="bi bi-award-fill me-2"></i> {{ trans('theme::nomad.config.admin.vote_title') }}
                             </a>
+                            <a class="nav-link" data-tab="font" href="#" role="tab">
+                                <i class="bi bi-type me-2"></i> {{ trans('theme::nomad.config.admin.nav_font') }}
+                            </a>
                     </div>
                 </div>
 
@@ -255,6 +258,7 @@
                         @include('admin.config.partials.footer')
                         @include('admin.config.partials.articles')
                         @include('admin.config.partials.vote')
+                        @include('admin.config.partials.font')
                     </div>
                 </div>
 

@@ -1,7 +1,7 @@
 {
     "color": "#ffc107",
     "logo_size": "400",
-    "banner_enabled": "1",
+    "banner_enabled": "0",
     "banner_color": "#af0d0d",
     "banner_interval": "5",
     "banner_texts": {
@@ -41,7 +41,7 @@
     "footer_about_title": "\u00c0 propos",
     "footer_links_title": "Liens utiles",
     "footer_social_title": "R\u00e9seaux sociaux",
-    "articles_default_image": "background.jpg",
+    "articles_default_image": null,
     "vote_page_description": "Soutenez le serveur et gagnez des r\u00e9compenses !",
     "vote_ranking_description": "D\u00e9couvrez les meilleurs voteurs de ce mois et leurs r\u00e9compenses !",
     "vote_rewards_description": "Voici les r\u00e9compenses que vous pouvez gagner en votant !",
@@ -61,5 +61,7 @@
     "stats_icon_3": "bi bi-trophy-fill",
     "unique_players_label": "Joueurs uniques",
     "record_players_label": "Record de joueurs",
-    "online_players_label": "Joueurs en ligne"
+    "online_players_label": "Joueurs en ligne",
+    "font_url": null,
+    "font_family": null
 }

@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initBannerManagement();
     initLogoSizeSlider();
     initVoteRewardsManagement();
+    initFontSettings();
 });
 
 function initConfigTabs() {
@@ -388,4 +389,15 @@ function addVoteReward() {
 
     const newRemoveButton = document.querySelector('#vote-rewards-container .vote-reward-card:last-child .vote-reward-remove');
     addVoteRewardListener(newRemoveButton);
+}
+
+function initFontSettings() {
+    const fontEnabled = document.getElementById('font_enabled');
+    const fontSettings = document.getElementById('font-settings');
+    
+    if (fontEnabled && fontSettings) {
+        fontEnabled.addEventListener('change', function() {
+            fontSettings.style.display = this.checked ? 'flex' : 'none';
+        });
+    }
 }

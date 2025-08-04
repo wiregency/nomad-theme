@@ -39,5 +39,8 @@ return [
     'unique_players_label' => 'required|string',
     'record_players_label' => 'required|string',
     'online_players_label' => 'required|string',
+    'font_enabled' => 'nullable|boolean',
+    'font_url' => 'nullable|string|url',
+    'font_family' => 'nullable|string|max:100',
 ];
 

@@ -51,6 +51,10 @@
 
     <!-- Fonts -->
     <link href="{{ asset('vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+    
+    @if(theme_config('font_enabled') && theme_config('font_url'))
+        <link href="{{ theme_config('font_url') }}" rel="stylesheet">
+    @endif
 
     <!-- Styles -->
     <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -61,6 +65,12 @@
         :root {
             --primary-color: {{ $themeColor }};
         }
+        
+        @if(theme_config('font_enabled') && theme_config('font_family'))
+        body {
+            font-family: {{ theme_config('font_family') }}, sans-serif;
+        }
+        @endif
     </style>
     @include('elements.theme-color', ['color' => $themeColor])
 

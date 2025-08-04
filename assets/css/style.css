@@ -6,6 +6,16 @@
  *  For the project Nomad
  */
 
+/* Custom Font Support */
+body {
+    font-family: inherit;
+}
+
+/* Ensure custom font applies to all elements */
+* {
+    font-family: inherit;
+}
+
 .top-banner {
     background-color: #ff3e3e;
     height: 44px;
